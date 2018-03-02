@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center display-2 my-5"><%= @organization.name %> Group!</h1>
+      <h4>Description:</h4>
+      <p><%= @organization.description %></p>
+      <a href="/update/<%= @organization.id %>"><button class="btn btn-primary">Join Group!</button></a>
+      <a href="/delete/<%= @organization.id %>" data-method="delete"><button class="btn btn-danger">Leave Group</button></a>
+      <h4 class="mt-5">Created By: <%= @organization.user.first_name %> <%= @organization.user.last_name %></h4>
+      <h4>Members:</h4>
+      <% @membership.each do |member| %>
+      <p><%= member.user.first_name %> <%= member.user.last_name %></p>
+      <% end %>
+      <a href="/groups"><button class="btn btn-primary btn-block my-5">Dashboard</button></a>
+    </div>
+  </div>
+</div>

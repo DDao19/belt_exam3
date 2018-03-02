@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <div class="row" style="float:right;">
+        <p class="mr-3">Haven't registered yet?</p>
+        <a href="/"><button class="btn btn-info" style="float:right;">Register Now</button></a>
+      </div>
+      <h1 class="my-5 text-center">Login</h1>
+      <form action="/sessions" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+          <label for="">Email:</label>
+          <input type="email" name="email" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Password:</label>
+          <input type="password" name="password" class="form-control">
+        </div>
+        <button class="btn btn-primary btn-lg btn-block my-2">Login!</button>
+      </form>
+    </div>
+  </div>
+</div>

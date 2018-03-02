@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-5 mx-auto">
+      <div class="row" style="float:right;">
+        <p class="mr-3">Already Registered?</p>
+        <a href="sessions/new"><button class="btn btn-info mx-2" style="float:right;">Login</button></a>
+      </div>
+      <h1 class="my-5 text-center">Sign Up!</h1>
+      <form action="/users" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+          <label for="">First Name:</label>
+          <input type="text" name="user[first_name]" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Last Name:</label>
+          <input type="text" name="user[last_name]" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Email:</label>
+          <input type="email" name="user[email]" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Password:</label>
+          <input type="password" name="user[password]" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="">Confirm Password:</label>
+          <input type="password" name="user[password_confirmation]" class="form-control">
+        </div>
+        <button class="my-2 btn btn-primary btn-lg btn-block">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

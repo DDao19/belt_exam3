@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Cabin+Sketch', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<style>
+body{
+  font-family: 'Cabin Sketch', cursive;
+}
+</style>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <% if current_user %>
+        <a href="/sessions/<%= current_user.id %>" data-method="delete">
+          <button class="btn btn-danger">Logout</button>
+        </a>
+      <% end %>
+
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+        <div class="alert alert-danger text-center" role="alert">
+          <%= error %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
